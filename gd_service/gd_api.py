@@ -21,9 +21,10 @@ drive_service = build('drive', 'v3', credentials=credentials)
 
 class GoogleDriveApi:
 
-    def create_folder(self):
-        """Создание папки внутри существующей Test Upload"""
-
+    def create_inner_folder(self):
+        """
+        Создание папки внутри существующей Test Upload
+        """
         folder_metadata = {
             'name': FOLDER_NAME,
             'mimeType': 'application/vnd.google-apps.folder',
@@ -42,7 +43,9 @@ class GoogleDriveApi:
         file_metadata = {'name': Path(name).name, 'parents': [FOLDER_ID]}
         media = MediaFileUpload(filename=name,
                                 mimetype='text/plain')
-        file = drive_service.files().create(body=file_metadata,
-                                            media_body=media,
-                                            fields='id').execute()
+        file = drive_service.files().create(
+            body=file_metadata,
+            media_body=media,
+            fields='id'
+        ).execute()
         return file

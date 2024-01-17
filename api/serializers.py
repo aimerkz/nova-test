@@ -1,5 +1,4 @@
 import re
-from collections import OrderedDict
 
 from rest_framework import serializers
 
@@ -23,12 +22,8 @@ class UploadFileSerializer(serializers.Serializer):
 class UploadFileLogSerializer(serializers.ModelSerializer):
     id = serializers.IntegerField(read_only=True)
     upload_at = serializers.DateTimeField(read_only=True)
-    name = serializers.CharField(required=True, min_length=1, max_length=100)
+    name = serializers.CharField(read_only=True)
 
     class Meta:
         model = UploadFile
         fields = ('id', 'name', 'upload_at')
-
-    def create(self, validated_data: OrderedDict):
-        """Создание записи в бд о загрузке файла на гугл диск"""
-        return UploadFile.objects.create(**validated_data)
