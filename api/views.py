@@ -22,7 +22,7 @@ class UploadFileView(ListCreateAPIView):
     @extend_schema(
         tags=['upload-file'],
         request=UploadFileSerializer,
-        description='param: name - имя файла.формат (к примеру, file.txt)  \n'
+        description='param: name - имя файла.формат (Пока формат строго txt, например, file.txt)  \n'
                     'param: data - текстовое содержимое будущего файла (str type)',
         responses={HTTP_201_CREATED: OpenApiResponse()}
     )
