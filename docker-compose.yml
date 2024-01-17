@@ -1,0 +1,25 @@
+version: '3.8'
+
+
+services:
+
+  postgres:
+    container_name: backend
+    image: postgres:14.6-alpine
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - '${DB_PORT}:5432'
+    healthcheck:
+      test: pg_isready -U ${DB_USER} -d ${DB_NAME}
+      interval: 3s
+      timeout: 2s
+      retries: 3
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+    driver: local

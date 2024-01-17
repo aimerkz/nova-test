@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "nova-test"
+version = "0.1.0"
+description = ""
+authors = ["Artem Merkulov <artem-merk96@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.0.1"
+djangorestframework = "^3.14.0"
+python-dotenv = "^1.0.0"
+drf-spectacular = "^0.27.0"
+psycopg2-binary = "^2.9.9"
+google-api-python-client = "^2.114.0"
+google-auth-httplib2 = "^0.2.0"
+google-auth-oauthlib = "^1.2.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
