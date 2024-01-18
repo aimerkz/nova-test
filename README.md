@@ -4,6 +4,8 @@
 
 
 ```bash
+$ git clone https://github.com/aimerkz/nova-test.git
+$ cd nova-test
 $ docker-compose up -d
 ```
 Перейдите по ссылке: \
