@@ -4,7 +4,7 @@
 
 
 ```bash
-$ docker-compose up-d
+$ docker-compose up -d
 ```
 Перейдите по ссылке: \
 [Nova-test API](http://127.0.0.1:8001/api/docs/)
