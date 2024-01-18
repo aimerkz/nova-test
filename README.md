@@ -12,3 +12,5 @@ $ docker-compose up-d
 ```
  - GET/Upload-file - просмотр записей о загруженных файлах в Google Drive
  - POST/Upload-file - загрузка файла в Google Drive по переданным name и data в теле запроса
+```
+Зайти в [Google Drive](https://drive.google.com/drive/u/1/folders/1KvwiJ0j5DYv85B22kEu1CSXJIYRrhGSA) и проверить наличие файла
