@@ -6,7 +6,7 @@
 ```bash
 $ git clone https://github.com/aimerkz/nova-test.git
 $ cd nova-test
-$ cp env.example > .env
+$ cp env.example .env
 $ docker-compose up -d
 ```
 Перейдите по ссылке: \
